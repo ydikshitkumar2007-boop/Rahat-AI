@@ -211,6 +211,24 @@ export const translations = {
     verifyUrgentConditions: 'Verify urgent conditions with authorized local agencies',
     allRightsReserved: 'All rights reserved',
     notOfficialEmergencyService: 'Not an official emergency service',
+
+    // Emergency Call Feature
+    emergencyCall: 'Emergency Call',
+    emergencyCallTitle: 'Emergency Helpline & Dialer',
+    emergencyCallSub: 'Select a verified disaster helpline and optionally prepare your location coordinates before dialing.',
+    selectHotline: 'Select Emergency Helpline',
+    fetchLocation: 'Use My Location',
+    fetchingLocation: 'Locating...',
+    locationCoordinates: 'Location Coordinates',
+    copyCoordinates: 'Copy Coordinates',
+    copied: 'Copied to Clipboard!',
+    callNow: 'Call Now',
+    emergencyNotice: 'Note: Tapping "Call Now" opens your device dialer. Web browsers cannot transmit location automatically to responders. Please state your coordinates clearly during the call.',
+    nationalEmergency: 'National Emergency Response System (112)',
+    ndrfControl: 'NDRF Control Room (1078)',
+    meghalayaSdma: 'Meghalaya SDMA Helpline (1070)',
+    sikkimSdma: 'Sikkim SDMA Helpline (1077)',
+    assamSdma: 'Assam SDMA Helpline (1079)',
   },
   hi: {
     // Brand & Header
@@ -422,5 +440,23 @@ export const translations = {
     verifyUrgentConditions: 'तात्कालिक परिस्थितियों की पुष्टि अधिकृत स्थानीय एजेंसियों से करें',
     allRightsReserved: 'सर्वाधिकार सुरक्षित',
     notOfficialEmergencyService: 'यह आधिकारिक आपातकालीन सेवा नहीं है',
+
+    // Emergency Call Feature
+    emergencyCall: 'आपातकालीन कॉल',
+    emergencyCallTitle: 'आपातकालीन हेल्पलाइन और डायलर',
+    emergencyCallSub: 'सत्यापित आपातकालीन हेल्पलाइन चुनें और कॉल करने से पहले अपने स्थान निर्देशांक प्राप्त करें।',
+    selectHotline: 'आपातकालीन हेल्पलाइन चुनें',
+    fetchLocation: 'मेरा स्थान प्राप्त करें',
+    fetchingLocation: 'स्थान खोजा जा रहा है...',
+    locationCoordinates: 'स्थान निर्देशांक',
+    copyCoordinates: 'निर्देशांक कॉपी करें',
+    copied: 'क्लिपबोर्ड पर कॉपी किया गया!',
+    callNow: 'अभी कॉल करें',
+    emergencyNotice: 'नोट: "अभी कॉल करें" पर टैप करने से आपका डिवाइस डायलर खुलता है। वेब ब्राउज़र आपातकालीन सेवाओं को स्वतः स्थान नहीं भेज सकते। कॉल के दौरान अपने निर्देशांक स्पष्ट रूप से बताएं।',
+    nationalEmergency: 'राष्ट्रीय आपातकालीन सेवा (112)',
+    ndrfControl: 'एनडीआरएफ नियंत्रण कक्ष (1078)',
+    meghalayaSdma: 'मेघालय एसडीएमए हेल्पलाइन (1070)',
+    sikkimSdma: 'सिक्किम एसडीएमए हेल्पलाइन (1077)',
+    assamSdma: 'असम एसडीएमए हेल्पलाइन (1079)',
   },
 };

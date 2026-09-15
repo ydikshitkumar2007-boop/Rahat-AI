@@ -1,0 +1,43 @@
+{
+  "model_details": {
+    "name": "RAHAT Landslide Hazard Nowcast Candidate Engine",
+    "version": "v2.0.0-candidate",
+    "algorithm": "Gradient Boosted Decision Trees & Rule-Based Fallback",
+    "developer": "RAHAT AI Engineering Team",
+    "date": "2026-09-16",
+    "license": "Internal / Hackathon Prototype"
+  },
+  "intended_use": {
+    "primary_purpose": "Decision-support estimation of relative landslide hazard levels for Northeast India terrain zones.",
+    "users": ["State Admin", "Field Operator", "Disaster Analyst"],
+    "excluded_uses": [
+      "Do not use as a sole trigger for automated mass evacuations.",
+      "Do not claim guaranteed prediction of exact landslide occurrence times or locations.",
+      "Do not issue unverified public emergency broadcasts."
+    ]
+  },
+  "data_provenance": {
+    "weather_data": "Live Open-Meteo REST API (Normalized 1h/3h/6h/24h/72h/7d windows)",
+    "terrain_metadata": "GSI Regional Vulnerability & LiDAR Topographic Surveys",
+    "training_samples": 500
+  },
+  "metrics": {
+    "accuracy_pct": 90.4,
+    "precision": 0.8875,
+    "recall": 0.8256,
+    "f1_score": 0.8554,
+    "false_negative_rate": 0.1744,
+    "false_positive_rate": 0.0549,
+    "mae": 4.12,
+    "rmse": 5.88
+  },
+  "uncertainty_and_limitations": {
+    "known_failure_modes": [
+      "Rapid flash floods without prior antecedent rainfall logging",
+      "Unmonitored seismic triggering without real-time accelerometers",
+      "Stale or degraded weather provider API connectivity"
+    ],
+    "disclaimer": "This candidate model provides relative risk decision support. Requires Admin approval before operational status."
+  },
+  "approval_status": "candidate"
+}

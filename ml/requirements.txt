@@ -1,0 +1,8 @@
+# Offline Python Machine Learning Pipeline Dependencies for RAHAT AI
+# Note: Used exclusively for offline training & validation scripts. Never imported in browser code.
+scikit-learn>=1.3.0
+pandas>=2.0.0
+numpy>=1.24.0
+pyyaml>=6.0
+joblib>=1.3.0
+xgboost>=2.0.0

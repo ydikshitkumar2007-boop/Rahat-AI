@@ -1,0 +1,43 @@
+# RAHAT AI Candidate Model Configuration
+model:
+  name: "Landslide_Hazard_Nowcast_Candidate"
+  version: "v2.0.0-candidate"
+  type: "gradient_boosted_trees" # Options: rainfall_rule_baseline, logistic_regression, decision_tree, gradient_boosted_trees
+  random_seed: 42
+
+features:
+  numerical:
+    - rainfall_1h_mm
+    - rainfall_3h_mm
+    - rainfall_6h_mm
+    - rainfall_24h_mm
+    - rainfall_72h_mm
+    - rainfall_7d_mm
+    - forecast_rain_6h_mm
+    - forecast_rain_24h_mm
+    - relative_humidity_pct
+    - slope_deg
+    - elevation_m
+    - distance_to_road_m
+    - distance_to_fault_m
+    - historical_susceptibility_score
+  categorical:
+    - geology_class
+    - landcover_class
+
+target:
+  name: "landslide_occurred" # Binary (0/1) or multi-class severity
+
+data_validation:
+  min_samples: 100
+  max_missing_ratio: 0.10
+  require_geocoding: true
+  split_strategy: "temporal_spatial" # Avoid spatial/temporal leakage
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+
+thresholds:
+  low_to_moderate: 30
+  moderate_to_high: 60
+  high_to_severe: 85

@@ -1,0 +1,11 @@
+{
+  "model_version": "v1.0.0-synthetic-dt",
+  "evaluation_metrics": {
+    "synthetic_test_samples": 600,
+    "mean_absolute_error_mae": 5.79,
+    "mean_squared_error_mse": 51.13,
+    "root_mean_squared_error_rmse": 7.15,
+    "risk_level_classification_accuracy_pct": 71.83
+  },
+  "disclaimer": "Synthetic evaluation metrics report. Not calibrated for real-world emergency response."
+}

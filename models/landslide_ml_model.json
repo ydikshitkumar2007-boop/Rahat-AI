@@ -1,0 +1,461 @@
+{
+  "model_name": "Prototype ML-Assisted Landslide Risk Estimator",
+  "model_version": "v1.0.0-synthetic-dt",
+  "trained_at": "2026-09-15T00:00:00Z",
+  "dataset_size": 3000,
+  "random_seed": 42,
+  "feature_names": [
+    "live_precipitation_mm",
+    "forecast_rain_next_6h_mm",
+    "live_relative_humidity",
+    "simulated_soil_saturation_pct",
+    "simulated_slope_displacement_mm",
+    "simulated_vibration_score",
+    "terrain_vulnerability"
+  ],
+  "disclaimer": "PROTOTYPE ONLY: Trained on synthetic telemetry dataset for demonstration. Not an official emergency warning system.",
+  "tree_root": {
+    "feature": "forecast_rain_next_6h_mm",
+    "threshold": 58.53,
+    "left": {
+      "feature": "simulated_soil_saturation_pct",
+      "threshold": 50.5,
+      "left": {
+        "feature": "simulated_slope_displacement_mm",
+        "threshold": 10.7,
+        "left": {
+          "feature": "terrain_vulnerability",
+          "threshold": 50.7,
+          "left": {
+            "feature": "live_precipitation_mm",
+            "threshold": 28.7,
+            "left": {
+              "feature": "simulated_soil_saturation_pct",
+              "threshold": 39.7,
+              "left": {
+                "value": 27.17
+              },
+              "right": {
+                "value": 41.43
+              }
+            },
+            "right": {
+              "feature": "simulated_slope_displacement_mm",
+              "threshold": 2.34,
+              "left": {
+                "value": 32.81
+              },
+              "right": {
+                "value": 41.35
+              }
+            }
+          },
+          "right": {
+            "feature": "forecast_rain_next_6h_mm",
+            "threshold": 18.79,
+            "left": {
+              "feature": "simulated_slope_displacement_mm",
+              "threshold": 6.17,
+              "left": {
+                "value": 33.81
+              },
+              "right": {
+                "value": 43.42
+              }
+            },
+            "right": {
+              "feature": "live_precipitation_mm",
+              "threshold": 17.15,
+              "left": {
+                "value": 40.24
+              },
+              "right": {
+                "value": 49.54
+              }
+            }
+          }
+        },
+        "right": {
+          "feature": "live_precipitation_mm",
+          "threshold": 36.99,
+          "left": {
+            "feature": "terrain_vulnerability",
+            "threshold": 59.3,
+            "left": {
+              "feature": "simulated_slope_displacement_mm",
+              "threshold": 13.2,
+              "left": {
+                "value": 38.38
+              },
+              "right": {
+                "value": 46.55
+              }
+            },
+            "right": {
+              "feature": "simulated_soil_saturation_pct",
+              "threshold": 22.6,
+              "left": {
+                "value": 48.43
+              },
+              "right": {
+                "value": 57.35
+              }
+            }
+          },
+          "right": {
+            "feature": "forecast_rain_next_6h_mm",
+            "threshold": 41.78,
+            "left": {
+              "feature": "terrain_vulnerability",
+              "threshold": 52.7,
+              "left": {
+                "value": 54.5
+              },
+              "right": {
+                "value": 59.47
+              }
+            },
+            "right": {
+              "feature": "terrain_vulnerability",
+              "threshold": 61.6,
+              "left": {
+                "value": 60.94
+              },
+              "right": {
+                "value": 66.92
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "feature": "simulated_slope_displacement_mm",
+        "threshold": 11.98,
+        "left": {
+          "feature": "live_precipitation_mm",
+          "threshold": 26.6,
+          "left": {
+            "feature": "terrain_vulnerability",
+            "threshold": 28.1,
+            "left": {
+              "feature": "simulated_soil_saturation_pct",
+              "threshold": 64.8,
+              "left": {
+                "value": 34.6
+              },
+              "right": {
+                "value": 43.57
+              }
+            },
+            "right": {
+              "feature": "forecast_rain_next_6h_mm",
+              "threshold": 35.26,
+              "left": {
+                "value": 46.56
+              },
+              "right": {
+                "value": 55.52
+              }
+            }
+          },
+          "right": {
+            "feature": "forecast_rain_next_6h_mm",
+            "threshold": 27.39,
+            "left": {
+              "feature": "simulated_slope_displacement_mm",
+              "threshold": 6.66,
+              "left": {
+                "value": 47.98
+              },
+              "right": {
+                "value": 58
+              }
+            },
+            "right": {
+              "feature": "simulated_slope_displacement_mm",
+              "threshold": 3.26,
+              "left": {
+                "value": 55.64
+              },
+              "right": {
+                "value": 62.16
+              }
+            }
+          }
+        },
+        "right": {
+          "feature": "live_precipitation_mm",
+          "threshold": 33.47,
+          "left": {
+            "feature": "terrain_vulnerability",
+            "threshold": 52.3,
+            "left": {
+              "feature": "forecast_rain_next_6h_mm",
+              "threshold": 28.92,
+              "left": {
+                "value": 53.46
+              },
+              "right": {
+                "value": 59.75
+              }
+            },
+            "right": {
+              "feature": "forecast_rain_next_6h_mm",
+              "threshold": 34.28,
+              "left": {
+                "value": 61.32
+              },
+              "right": {
+                "value": 70.71
+              }
+            }
+          },
+          "right": {
+            "feature": "terrain_vulnerability",
+            "threshold": 44,
+            "left": {
+              "feature": "simulated_soil_saturation_pct",
+              "threshold": 78.5,
+              "left": {
+                "value": 62.61
+              },
+              "right": {
+                "value": 69.83
+              }
+            },
+            "right": {
+              "feature": "simulated_soil_saturation_pct",
+              "threshold": 72.6,
+              "left": {
+                "value": 68.95
+              },
+              "right": {
+                "value": 78.68
+              }
+            }
+          }
+        }
+      }
+    },
+    "right": {
+      "feature": "simulated_soil_saturation_pct",
+      "threshold": 39.2,
+      "left": {
+        "feature": "simulated_slope_displacement_mm",
+        "threshold": 8.32,
+        "left": {
+          "feature": "terrain_vulnerability",
+          "threshold": 39.4,
+          "left": {
+            "feature": "simulated_slope_displacement_mm",
+            "threshold": 3.3,
+            "left": {
+              "feature": "forecast_rain_next_6h_mm",
+              "threshold": 83.68,
+              "left": {
+                "value": 36.29
+              },
+              "right": {
+                "value": 45.66
+              }
+            },
+            "right": {
+              "feature": "simulated_soil_saturation_pct",
+              "threshold": 16.3,
+              "left": {
+                "value": 47.87
+              },
+              "right": {
+                "value": 52.83
+              }
+            }
+          },
+          "right": {
+            "feature": "forecast_rain_next_6h_mm",
+            "threshold": 104.09,
+            "left": {
+              "feature": "live_precipitation_mm",
+              "threshold": 24.37,
+              "left": {
+                "value": 46.73
+              },
+              "right": {
+                "value": 53.67
+              }
+            },
+            "right": {
+              "feature": "simulated_soil_saturation_pct",
+              "threshold": 24.2,
+              "left": {
+                "value": 55.5
+              },
+              "right": {
+                "value": 62.09
+              }
+            }
+          }
+        },
+        "right": {
+          "feature": "forecast_rain_next_6h_mm",
+          "threshold": 93.03,
+          "left": {
+            "feature": "live_precipitation_mm",
+            "threshold": 36.05,
+            "left": {
+              "feature": "simulated_slope_displacement_mm",
+              "threshold": 12.73,
+              "left": {
+                "value": 50.85
+              },
+              "right": {
+                "value": 59.3
+              }
+            },
+            "right": {
+              "feature": "terrain_vulnerability",
+              "threshold": 56.4,
+              "left": {
+                "value": 59.9
+              },
+              "right": {
+                "value": 68.84
+              }
+            }
+          },
+          "right": {
+            "feature": "simulated_slope_displacement_mm",
+            "threshold": 14.88,
+            "left": {
+              "feature": "simulated_soil_saturation_pct",
+              "threshold": 11.5,
+              "left": {
+                "value": 59.49
+              },
+              "right": {
+                "value": 65.39
+              }
+            },
+            "right": {
+              "feature": "terrain_vulnerability",
+              "threshold": 59.7,
+              "left": {
+                "value": 67.59
+              },
+              "right": {
+                "value": 75.83
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "feature": "simulated_slope_displacement_mm",
+        "threshold": 10.13,
+        "left": {
+          "feature": "terrain_vulnerability",
+          "threshold": 35,
+          "left": {
+            "feature": "simulated_soil_saturation_pct",
+            "threshold": 78.9,
+            "left": {
+              "feature": "forecast_rain_next_6h_mm",
+              "threshold": 97.48,
+              "left": {
+                "value": 52.18
+              },
+              "right": {
+                "value": 61.09
+              }
+            },
+            "right": {
+              "feature": "simulated_slope_displacement_mm",
+              "threshold": 4.89,
+              "left": {
+                "value": 60.67
+              },
+              "right": {
+                "value": 69.13
+              }
+            }
+          },
+          "right": {
+            "feature": "simulated_slope_displacement_mm",
+            "threshold": 3.73,
+            "left": {
+              "feature": "live_precipitation_mm",
+              "threshold": 13.68,
+              "left": {
+                "value": 56.67
+              },
+              "right": {
+                "value": 66.21
+              }
+            },
+            "right": {
+              "feature": "simulated_soil_saturation_pct",
+              "threshold": 76.2,
+              "left": {
+                "value": 68.07
+              },
+              "right": {
+                "value": 76.08
+              }
+            }
+          }
+        },
+        "right": {
+          "feature": "simulated_soil_saturation_pct",
+          "threshold": 63.6,
+          "left": {
+            "feature": "terrain_vulnerability",
+            "threshold": 56.3,
+            "left": {
+              "feature": "forecast_rain_next_6h_mm",
+              "threshold": 84.51,
+              "left": {
+                "value": 63.48
+              },
+              "right": {
+                "value": 72.34
+              }
+            },
+            "right": {
+              "feature": "live_precipitation_mm",
+              "threshold": 25.71,
+              "left": {
+                "value": 75.17
+              },
+              "right": {
+                "value": 80.6
+              }
+            }
+          },
+          "right": {
+            "feature": "terrain_vulnerability",
+            "threshold": 67,
+            "left": {
+              "feature": "forecast_rain_next_6h_mm",
+              "threshold": 101.48,
+              "left": {
+                "value": 74.54
+              },
+              "right": {
+                "value": 81.47
+              }
+            },
+            "right": {
+              "feature": "forecast_rain_next_6h_mm",
+              "threshold": 76.35,
+              "left": {
+                "value": 79.08
+              },
+              "right": {
+                "value": 88.51
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

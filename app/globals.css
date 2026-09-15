@@ -1,0 +1,369 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+/* ====================================================
+   LIGHT THEME — WHITE / OFF-WHITE + EARTH-BROWN + SAFFRON
+   ==================================================== */
+html.light, :root:not(.dark) {
+  --app-bg: #F8F7F4;
+  --app-bg-canvas: #FCFBF9;
+  --app-bg-subtle: #F3EFE8;
+  --app-surface-subtle: #EEE7DC;
+  --app-surface: #FFFFFF;
+  --app-surface-muted: #FBF8F3;
+  --app-surface-raised: #FFFFFF;
+  --app-header-bg: #FFFFFF;
+  --app-sidebar-bg: #FFFDF9;
+  --app-footer-bg: #2B2520;
+  --app-input-bg: #FFFFFF;
+  --app-table-bg: #FFFFFF;
+  --app-table-header-bg: #F4EFE8;
+  --app-table-row-hover: #FFF7EA;
+  --app-modal-bg: #FFFFFF;
+  --app-overlay-bg: rgba(38, 31, 24, 0.38);
+  --app-toast-bg: #FFFFFF;
+
+  --app-border: #E5DED3;
+  --app-border-strong: #D5C7B7;
+  --app-border-divider: #ECE8E1;
+
+  --app-text: #25201C;
+  --app-text-heading: #33271F;
+  --app-text-secondary: #6E6258;
+  --app-text-muted: #918579;
+  --app-link: #754A2B;
+  --app-link-hover: #A45D20;
+
+  /* Brand Brown */
+  --brand-brown: #754A2B;
+  --brand-brown-hover: #5D3820;
+  --brand-brown-active: #472817;
+  --brand-brown-soft: #F3E6D8;
+  --brand-brown-border: #DABFA8;
+  --brand-brown-text: #754A2B;
+
+  /* Saffron Accent */
+  --brand-saffron: #D97706;
+  --brand-saffron-hover: #B45309;
+  --brand-saffron-active: #92400E;
+  --brand-saffron-soft: #FFF4DE;
+  --brand-saffron-border: #F3C46F;
+  --brand-saffron-text: #995900;
+  --focus-ring: #D97706;
+
+  /* Legacy aliases for component backwards-compatibility */
+  --bg-main: var(--app-bg);
+  --bg-card: var(--app-surface);
+  --bg-header: var(--app-header-bg);
+  --bg-subtle: var(--app-bg-subtle);
+  --bg-input: var(--app-input-bg);
+  --bg-hover: var(--app-table-row-hover);
+  --border-color: var(--app-border);
+  --border-strong: var(--app-border-strong);
+  --border-divider: var(--app-border-divider);
+  --text-main: var(--app-text);
+  --text-heading: var(--app-text-heading);
+  --text-muted: var(--app-text-muted);
+  --text-secondary: var(--app-text-secondary);
+  --brand-primary: var(--brand-brown);
+  --brand-hover: var(--brand-brown-hover);
+  --brand-active: var(--brand-brown-active);
+  --brand-soft: var(--brand-brown-soft);
+  --brand-border: var(--brand-brown-border);
+  --brand-text: var(--brand-brown-text);
+  --saffron-primary: var(--brand-saffron);
+  --saffron-hover: var(--brand-saffron-hover);
+  --saffron-soft: var(--brand-saffron-soft);
+  --saffron-border: var(--brand-saffron-border);
+  --saffron-text: var(--brand-saffron-text);
+}
+
+/* ====================================================
+   DARK THEME — CHARCOAL / SLATE PROFESSIONAL DARK MODE
+   ==================================================== */
+html.dark {
+  --app-bg: #0F1115;
+  --app-bg-canvas: #141820;
+  --app-bg-subtle: #181D26;
+  --app-surface-subtle: #1C2330;
+  --app-surface: #1B212B;
+  --app-surface-muted: #202734;
+  --app-surface-raised: #252E3C;
+  --app-header-bg: #151A22;
+  --app-sidebar-bg: #151A22;
+  --app-footer-bg: #0B0E13;
+  --app-input-bg: #1B212B;
+  --app-table-bg: #1B212B;
+  --app-table-header-bg: #252E3C;
+  --app-table-row-hover: #263141;
+  --app-modal-bg: #202734;
+  --app-overlay-bg: rgba(0, 0, 0, 0.62);
+  --app-toast-bg: #252E3C;
+
+  --app-border: #323C4B;
+  --app-border-strong: #435064;
+  --app-border-divider: #2B3647;
+
+  --app-text: #F8FAFC;
+  --app-text-heading: #FFFFFF;
+  --app-text-secondary: #CBD5E1;
+  --app-text-muted: #94A3B8;
+  --app-link: #E2B27D;
+  --app-link-hover: #F5C98D;
+
+  /* Brand Brown in Dark Mode */
+  --brand-brown: #C68A5A;
+  --brand-brown-hover: #D8A779;
+  --brand-brown-active: #A76A3D;
+  --brand-brown-soft: rgba(198, 138, 90, 0.15);
+  --brand-brown-border: rgba(198, 138, 90, 0.38);
+  --brand-brown-text: #F2D1A7;
+
+  /* Saffron Accent in Dark Mode */
+  --brand-saffron: #F59E0B;
+  --brand-saffron-hover: #FBBF24;
+  --brand-saffron-active: #D97706;
+  --brand-saffron-soft: rgba(245, 158, 11, 0.14);
+  --brand-saffron-border: rgba(245, 158, 11, 0.34);
+  --brand-saffron-text: #FCD34D;
+  --focus-ring: #F59E0B;
+
+  /* Legacy aliases */
+  --bg-main: var(--app-bg);
+  --bg-card: var(--app-surface);
+  --bg-header: var(--app-header-bg);
+  --bg-subtle: var(--app-bg-subtle);
+  --bg-input: var(--app-input-bg);
+  --bg-hover: var(--app-table-row-hover);
+  --border-color: var(--app-border);
+  --border-strong: var(--app-border-strong);
+  --border-divider: var(--app-border-divider);
+  --text-main: var(--app-text);
+  --text-heading: var(--app-text-heading);
+  --text-muted: var(--app-text-muted);
+  --text-secondary: var(--app-text-secondary);
+  --brand-primary: var(--brand-brown);
+  --brand-hover: var(--brand-brown-hover);
+  --brand-active: var(--brand-brown-active);
+  --brand-soft: var(--brand-brown-soft);
+  --brand-border: var(--brand-brown-border);
+  --brand-text: var(--brand-brown-text);
+  --saffron-primary: var(--brand-saffron);
+  --saffron-hover: var(--brand-saffron-hover);
+  --saffron-soft: var(--brand-saffron-soft);
+  --saffron-border: var(--brand-saffron-border);
+  --saffron-text: var(--brand-saffron-text);
+}
+
+body {
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Reduced Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus Ring Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* ====================================================
+   LIGHT MODE OVERRIDES FOR HARD-CODED & TAILWIND CLASSES
+   ==================================================== */
+html.light body {
+  background-color: #F8F7F4 !important;
+  color: #25201C !important;
+}
+
+html.light header {
+  background-color: #FFFFFF !important;
+  border-color: #E5DED3 !important;
+}
+
+html.light footer {
+  background-color: #2B2520 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #F7F1E8 !important;
+}
+
+html.light .bg-white,
+html.light .bg-sand-50,
+html.light .bg-earth-50 {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-sand-100,
+html.light .bg-sand-200,
+html.light .bg-earth-100,
+html.light .bg-earth-200 {
+  background-color: #F3EFE8 !important;
+}
+
+html.light .border-sand-300,
+html.light .border-sand-400,
+html.light .border-earth-300,
+html.light .border-earth-400 {
+  border-color: #E5DED3 !important;
+}
+
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  color: #25201C !important;
+  border-color: #D9D0C4 !important;
+}
+
+/* ====================================================
+   DARK MODE OVERRIDES FOR CHARCOAL / SLATE SURFACES
+   ==================================================== */
+html.dark body {
+  background-color: #0F1115 !important;
+  color: #F8FAFC !important;
+}
+
+html.dark header {
+  background-color: #151A22 !important;
+  border-color: #303949 !important;
+}
+
+html.dark footer {
+  background-color: #0B0E13 !important;
+  border-color: #2A3341 !important;
+  color: #E5E7EB !important;
+}
+
+/* Map white/gray/sand backgrounds in dark mode to dark surfaces */
+html.dark .bg-white,
+html.dark .bg-sand-50,
+html.dark .bg-sand-100,
+html.dark .bg-sand-200,
+html.dark .bg-earth-50,
+html.dark .bg-earth-100,
+html.dark .bg-earth-200,
+html.dark .bg-earth-800,
+html.dark .bg-earth-850,
+html.dark .bg-earth-900,
+html.dark .bg-gray-800,
+html.dark .bg-gray-900,
+html.dark .bg-gray-950,
+html.dark .bg-slate-800,
+html.dark .bg-slate-850,
+html.dark .bg-slate-900,
+html.dark .bg-slate-950 {
+  background-color: #1B212B !important;
+  border-color: #323C4B !important;
+  color: #F8FAFC !important;
+}
+
+html.dark aside {
+  background-color: #151A22 !important;
+  border-color: #303949 !important;
+}
+
+html.dark .text-earth-900,
+html.dark .text-earth-800,
+html.dark .text-gray-900,
+html.dark .text-gray-800,
+html.dark .text-slate-900,
+html.dark .text-slate-800 {
+  color: #F8FAFC !important;
+}
+
+html.dark .text-earth-700,
+html.dark .text-earth-600,
+html.dark .text-gray-700,
+html.dark .text-gray-600,
+html.dark .text-slate-700,
+html.dark .text-slate-600 {
+  color: #CBD5E1 !important;
+}
+
+html.dark .text-earth-500,
+html.dark .text-gray-500,
+html.dark .text-slate-500 {
+  color: #94A3B8 !important;
+}
+
+html.dark .border-earth-300,
+html.dark .border-earth-700,
+html.dark .border-earth-800,
+html.dark .border-sand-300,
+html.dark .border-gray-700,
+html.dark .border-gray-800,
+html.dark .border-slate-700,
+html.dark .border-slate-800 {
+  border-color: #323C4B !important;
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #1B212B !important;
+  color: #F8FAFC !important;
+  border-color: #3A4657 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--app-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5DED3;
+  border-radius: 3px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #323C4B;
+}
+
+/* Leaflet Map Overrides */
+.leaflet-container {
+  font-family: var(--font-family) !important;
+}
+
+html.dark .leaflet-container {
+  background-color: #0F1115 !important;
+}
+
+html.light .leaflet-container {
+  background-color: #F3EFE8 !important;
+}
+
+html.dark .leaflet-popup-content-wrapper {
+  background-color: #1B212B !important;
+  color: #F8FAFC !important;
+  border: 1px solid #323C4B !important;
+}
+
+html.light .leaflet-popup-content-wrapper {
+  background-color: #FFFFFF !important;
+  color: #25201C !important;
+  border: 1px solid #E5DED3 !important;
+}

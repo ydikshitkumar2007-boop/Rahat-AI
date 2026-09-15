@@ -229,6 +229,15 @@ export const translations = {
     meghalayaSdma: 'Meghalaya SDMA Helpline (1070)',
     sikkimSdma: 'Sikkim SDMA Helpline (1077)',
     assamSdma: 'Assam SDMA Helpline (1079)',
+
+    // Simulation / Demo Scenario
+    demoScenario: 'Demo scenario',
+    normalConditions: 'Normal conditions',
+    moderateRainfallWatch: 'Moderate rainfall watch',
+    highHazardCorridor: 'High hazard corridor',
+    severeHazardWarning: 'Severe hazard warning',
+    resetToAvailableData: 'Reset to available data',
+    simulationDataBadge: 'Simulation data — not live field observation',
   },
   hi: {
     // Brand & Header
@@ -458,5 +467,14 @@ export const translations = {
     meghalayaSdma: 'मेघालय एसडीएमए हेल्पलाइन (1070)',
     sikkimSdma: 'सिक्किम एसडीएमए हेल्पलाइन (1077)',
     assamSdma: 'असम एसडीएमए हेल्पलाइन (1079)',
+
+    // Simulation / Demo Scenario
+    demoScenario: 'डेमो परिदृश्य',
+    normalConditions: 'सामान्य परिस्थितियाँ',
+    moderateRainfallWatch: 'मध्यम वर्षा निगरानी',
+    highHazardCorridor: 'उच्च जोखिम गलियारा',
+    severeHazardWarning: 'गंभीर जोखिम चेतावनी',
+    resetToAvailableData: 'उपलब्ध डेटा पर वापस जाएँ',
+    simulationDataBadge: 'सिमुलेशन डेटा — वास्तविक क्षेत्रीय अवलोकन नहीं',
   },
 };

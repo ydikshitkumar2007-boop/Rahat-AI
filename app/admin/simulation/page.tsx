@@ -3,14 +3,14 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { Sliders, AlertTriangle, BrainCircuit } from 'lucide-react';
+import { Sliders, AlertTriangle, BrainCircuit, ShieldAlert, RotateCcw } from 'lucide-react';
 import { evaluateDualRiskScore } from '@/services/mlInference';
 import { MLModelStatusBadge, OperatingModeBadge } from '@/components/ui/DataLabelBadge';
 import { useLanguage } from '@/lib/providers/LanguageProvider';
 
 export default function AdminSimulationPage() {
   const { t } = useLanguage();
-  const [scenario, setScenario] = useState<'normal' | 'heavy_rain' | 'extreme_rain' | 'manual'>('manual');
+  const [scenarioKey, setScenarioKey] = useState<string>('reset');
   const [livePrecip, setLivePrecip] = useState(25);
   const [forecastRain, setForecastRain] = useState(60);
   const [soilMoisture, setSoilMoisture] = useState(75);
@@ -18,29 +18,50 @@ export default function AdminSimulationPage() {
   const [vibrationScore, setVibrationScore] = useState(40);
   const [terrainVuln, setTerrainVuln] = useState(70);
 
-  const applyPreset = (sc: 'normal' | 'heavy_rain' | 'extreme_rain') => {
-    setScenario(sc);
-    if (sc === 'normal') {
-      setLivePrecip(5);
-      setForecastRain(12);
-      setSoilMoisture(35);
-      setSlopeDisplacement(0.3);
-      setVibrationScore(10);
-      setTerrainVuln(45);
-    } else if (sc === 'heavy_rain') {
-      setLivePrecip(35);
-      setForecastRain(75);
-      setSoilMoisture(78);
-      setSlopeDisplacement(2.4);
-      setVibrationScore(50);
-      setTerrainVuln(75);
-    } else if (sc === 'extreme_rain') {
-      setLivePrecip(58);
-      setForecastRain(140);
-      setSoilMoisture(92);
-      setSlopeDisplacement(4.5);
-      setVibrationScore(85);
-      setTerrainVuln(88);
+  const applyDemoScenario = (key: string) => {
+    setScenarioKey(key);
+    switch (key) {
+      case 'normal':
+        setLivePrecip(5);
+        setForecastRain(12);
+        setSoilMoisture(35);
+        setSlopeDisplacement(0.3);
+        setVibrationScore(10);
+        setTerrainVuln(45);
+        break;
+      case 'moderate':
+        setLivePrecip(25);
+        setForecastRain(45);
+        setSoilMoisture(62);
+        setSlopeDisplacement(1.5);
+        setVibrationScore(30);
+        setTerrainVuln(60);
+        break;
+      case 'high':
+        setLivePrecip(42);
+        setForecastRain(85);
+        setSoilMoisture(80);
+        setSlopeDisplacement(3.2);
+        setVibrationScore(55);
+        setTerrainVuln(78);
+        break;
+      case 'severe':
+        setLivePrecip(58);
+        setForecastRain(140);
+        setSoilMoisture(92);
+        setSlopeDisplacement(4.5);
+        setVibrationScore(85);
+        setTerrainVuln(88);
+        break;
+      case 'reset':
+      default:
+        setLivePrecip(25);
+        setForecastRain(60);
+        setSoilMoisture(75);
+        setSlopeDisplacement(2.8);
+        setVibrationScore(40);
+        setTerrainVuln(70);
+        break;
     }
   };
 
@@ -65,7 +86,7 @@ export default function AdminSimulationPage() {
               {t('simulationNoticeTitle')}
             </h2>
             <p className="text-xs text-earth-700 dark:text-earth-300 mt-0.5 font-medium">
-              {t('simulationNoticeDesc')}
+              {t('simulationDataBadge')}
             </p>
           </div>
         </div>
@@ -83,39 +104,41 @@ export default function AdminSimulationPage() {
         </p>
       </div>
 
-      {/* Scenario Presets Bar */}
-      <div className="flex flex-wrap items-center gap-3 bg-sand-50 dark:bg-earth-850 border border-sand-300 dark:border-earth-800 p-3 rounded-xl">
-        <span className="text-xs font-semibold text-earth-800 dark:text-earth-200">Scenario Presets:</span>
-        <button
-          onClick={() => applyPreset('normal')}
-          className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-            scenario === 'normal'
-              ? 'bg-brand-600 text-white shadow-xs'
-              : 'bg-sand-100 dark:bg-earth-800 text-earth-800 dark:text-earth-200 border border-sand-300 dark:border-earth-700 hover:bg-sand-200'
-          }`}
-        >
-          Normal Monsoonal
-        </button>
-        <button
-          onClick={() => applyPreset('heavy_rain')}
-          className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-            scenario === 'heavy_rain'
-              ? 'bg-brand-600 text-white shadow-xs'
-              : 'bg-sand-100 dark:bg-earth-800 text-earth-800 dark:text-earth-200 border border-sand-300 dark:border-earth-700 hover:bg-sand-200'
-          }`}
-        >
-          Heavy Rainfall Event
-        </button>
-        <button
-          onClick={() => applyPreset('extreme_rain')}
-          className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-            scenario === 'extreme_rain'
-              ? 'bg-risk-severe text-white'
-              : 'bg-sand-100 dark:bg-earth-800 text-earth-800 dark:text-earth-200 border border-sand-300 dark:border-earth-700 hover:bg-sand-200'
-          }`}
-        >
-          Extreme Cloudburst Event
-        </button>
+      {/* Compact Demo Scenario Selector */}
+      <div className="flex flex-wrap items-center justify-between gap-4 bg-sand-50 dark:bg-earth-850 border border-sand-300 dark:border-earth-800 p-4 rounded-xl shadow-xs">
+        <div className="flex items-center gap-3">
+          <label htmlFor="demo-scenario-select" className="text-xs font-semibold text-earth-900 dark:text-white shrink-0">
+            {t('demoScenario')}:
+          </label>
+          <select
+            id="demo-scenario-select"
+            aria-label={t('demoScenario')}
+            value={scenarioKey}
+            onChange={(e) => applyDemoScenario(e.target.value)}
+            className="bg-white dark:bg-gray-900 text-earth-900 dark:text-white text-xs border border-earth-300 dark:border-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-brand-primary font-medium"
+          >
+            <option value="normal">{t('normalConditions')}</option>
+            <option value="moderate">{t('moderateRainfallWatch')}</option>
+            <option value="high">{t('highHazardCorridor')}</option>
+            <option value="severe">{t('severeHazardWarning')}</option>
+            <option value="reset">{t('resetToAvailableData')}</option>
+          </select>
+        </div>
+
+        {scenarioKey !== 'reset' && (
+          <div className="flex items-center gap-2">
+            <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-800">
+              {t('simulationDataBadge')}
+            </span>
+            <button
+              onClick={() => applyDemoScenario('reset')}
+              className="p-1.5 rounded-lg bg-earth-200 dark:bg-gray-800 text-earth-700 dark:text-gray-300 hover:bg-earth-300 dark:hover:bg-gray-700 transition-colors"
+              title={t('resetToAvailableData')}
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -140,7 +163,7 @@ export default function AdminSimulationPage() {
                   max="60"
                   value={livePrecip}
                   onChange={(e) => {
-                    setScenario('manual');
+                    setScenarioKey('custom');
                     setLivePrecip(Number(e.target.value));
                   }}
                   className="w-full accent-earth-600 cursor-pointer"
@@ -158,7 +181,7 @@ export default function AdminSimulationPage() {
                   max="150"
                   value={forecastRain}
                   onChange={(e) => {
-                    setScenario('manual');
+                    setScenarioKey('custom');
                     setForecastRain(Number(e.target.value));
                   }}
                   className="w-full accent-earth-600 cursor-pointer"
@@ -176,7 +199,7 @@ export default function AdminSimulationPage() {
                   max="100"
                   value={soilMoisture}
                   onChange={(e) => {
-                    setScenario('manual');
+                    setScenarioKey('custom');
                     setSoilMoisture(Number(e.target.value));
                   }}
                   className="w-full accent-earth-600 cursor-pointer"
@@ -195,7 +218,7 @@ export default function AdminSimulationPage() {
                   step="0.1"
                   value={slopeDisplacement}
                   onChange={(e) => {
-                    setScenario('manual');
+                    setScenarioKey('custom');
                     setSlopeDisplacement(Number(e.target.value));
                   }}
                   className="w-full accent-earth-600 cursor-pointer"
@@ -213,7 +236,7 @@ export default function AdminSimulationPage() {
                   max="100"
                   value={terrainVuln}
                   onChange={(e) => {
-                    setScenario('manual');
+                    setScenarioKey('custom');
                     setTerrainVuln(Number(e.target.value));
                   }}
                   className="w-full accent-earth-600 cursor-pointer"

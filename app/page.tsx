@@ -19,7 +19,7 @@ import { useStations } from '@/hooks/useStations';
 import { RiskBadge, StationStatusBadge } from '@/components/ui/StatusBadge';
 import { useLanguage } from '@/lib/providers/LanguageProvider';
 
-// Retained monsoon terrain illustration
+// Retained monsoon terrain illustration with polished spacing
 function TerrainIllustration() {
   const { language } = useLanguage();
   const altText =
@@ -31,7 +31,7 @@ function TerrainIllustration() {
     <div
       role="img"
       aria-label={altText}
-      className="relative w-full aspect-[4/3] max-w-lg mx-auto bg-earth-100 dark:bg-gray-900 border border-earth-300 dark:border-gray-700 rounded-2xl p-4 overflow-hidden flex flex-col justify-between shadow-xs mb-4"
+      className="relative w-full aspect-[4/3] max-w-lg lg:max-w-none mx-auto bg-earth-100 dark:bg-gray-900 border border-earth-300 dark:border-gray-700 rounded-2xl p-4 overflow-hidden flex flex-col justify-between shadow-xs"
     >
       {/* Background Subtle Grid & Clouds */}
       <svg
@@ -62,7 +62,7 @@ function TerrainIllustration() {
       {/* Foreground Interactive Badges */}
       <div className="relative z-10 flex items-center justify-between text-xs">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/90 dark:bg-gray-800/90 border border-earth-300 dark:border-gray-700 text-earth-900 dark:text-white font-semibold backdrop-blur-xs">
-          <Radio className="w-3.5 h-3.5 text-saffron-primary animate-pulse" />
+          <Radio className="w-3.5 h-3.5 text-saffron-primary animate-pulse shrink-0" />
           Monsoon Slope Radar
         </span>
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-800 text-amber-900 dark:text-amber-200 font-bold backdrop-blur-xs">
@@ -74,7 +74,7 @@ function TerrainIllustration() {
         <div className="p-3 bg-white/95 dark:bg-gray-800/95 border border-earth-300 dark:border-gray-700 rounded-xl shadow-xs space-y-1">
           <div className="flex items-center justify-between text-xs">
             <span className="font-bold text-earth-900 dark:text-white flex items-center gap-1.5">
-              <Activity className="w-3.5 h-3.5 text-brand-primary dark:text-saffron-primary" />
+              <Activity className="w-3.5 h-3.5 text-brand-primary dark:text-saffron-primary shrink-0" />
               Sohra & Regional Terrain Contour
             </span>
             <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-200 border border-amber-300 dark:border-amber-900">
@@ -97,11 +97,12 @@ export default function LandingPage() {
   return (
     <div className="flex-1 space-y-10 pb-16">
       {/* Civic Resilience Hero Section */}
-      <section className="relative border-b border-earth-300 dark:border-gray-800 bg-earth-100/60 dark:bg-gray-950 py-14 px-4 sm:px-6 lg:px-8 transition-colors">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <section className="relative border-b border-earth-300 dark:border-gray-800 bg-earth-100/60 dark:bg-gray-950 py-12 lg:py-16 px-4 sm:px-6 lg:px-8 transition-colors">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column: Hero Content */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-gray-800 border border-earth-300 dark:border-gray-700 text-earth-800 dark:text-gray-200 text-xs font-semibold shadow-xs">
-              <Radio className="h-3.5 w-3.5 text-saffron-primary" />
+              <Radio className="h-3.5 w-3.5 text-saffron-primary shrink-0" />
               <span>{t('northeastIndiaPlatform')}</span>
             </div>
 
@@ -158,31 +159,34 @@ export default function LandingPage() {
           </div>
 
           {/* Right Column: Retained Terrain Illustration & Live Station Monitor Card */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-4 flex flex-col justify-center">
             <TerrainIllustration />
 
             <Card variant="tactical" className="shadow-md">
               <CardHeader>
-                <CardTitle className="flex items-center justify-between text-sm font-semibold">
+                <CardTitle className="flex flex-wrap items-center justify-between gap-2 text-sm font-semibold w-full">
                   <span className="flex items-center gap-2 text-earth-900 dark:text-white">
-                    <Activity className="h-4 w-4 text-brand-primary dark:text-saffron-primary" />
-                    {t('regionalMonitoringSummary')}
+                    <Activity className="h-4 w-4 text-brand-primary dark:text-saffron-primary shrink-0" />
+                    <span>{t('regionalMonitoringSummary')}</span>
                   </span>
-                  <span className="text-xs text-earth-600 dark:text-gray-400 font-normal">{t('liveIngestion')}</span>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-[11px] font-semibold shrink-0">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                    {t('liveIngestion')}
+                  </span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 {stations.slice(0, 3).map((st) => (
                   <div
                     key={st.id}
-                    className="p-3 rounded-xl bg-earth-50 dark:bg-gray-900 border border-earth-300 dark:border-gray-700 flex items-center justify-between hover:border-brand-primary/40 transition-colors"
+                    className="p-3.5 rounded-xl bg-earth-50 dark:bg-gray-900 border border-earth-300 dark:border-gray-700 flex items-center justify-between gap-3 hover:border-brand-primary/40 transition-colors"
                   >
-                    <div className="space-y-0.5">
+                    <div className="space-y-0.5 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-mono font-bold text-earth-900 dark:text-white text-xs">{st.code}</span>
                         <StationStatusBadge status={st.status} />
                       </div>
-                      <p className="text-xs text-earth-700 dark:text-gray-400">{st.name}, {st.state}</p>
+                      <p className="text-xs text-earth-700 dark:text-gray-400 truncate">{st.name}, {st.state}</p>
                     </div>
                     <RiskBadge level={st.risk_level} />
                   </div>

@@ -37,17 +37,17 @@ export function AdminSidebar() {
   ];
 
   return (
-    <aside className="w-64 bg-[#FFFDF9] dark:bg-[#151A22] border-r border-[#E5DED3] dark:border-[#303949] shrink-0 flex flex-col justify-between min-h-[calc(100vh-3.5rem)] shadow-xs">
+    <aside className="w-64 bg-[#FBFAF7] dark:bg-[#15191D] border-r border-[#DED8CD] dark:border-[#303943] shrink-0 flex flex-col justify-between min-h-[calc(100vh-3.5rem)] shadow-xs transition-colors">
       <div className="p-4 space-y-4">
         {/* Admin Header Title */}
-        <div className="px-3 py-2 bg-[#F3EFE8] dark:bg-[#1B212B] border border-[#E5DED3] dark:border-[#323C4B] rounded-xl flex items-center justify-between">
+        <div className="px-3 py-2 bg-[#F3EFE7] dark:bg-[#252D36] border border-[#DED8CD] dark:border-[#38424C] rounded-xl flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="h-4 w-4 text-[#754A2B] dark:text-[#E2B27D]" />
-            <span className="text-xs font-bold text-[#25201C] dark:text-[#F8FAFC] uppercase tracking-wider">
+            <ShieldCheck className="h-4 w-4 text-[#734627] dark:text-[#F4B942]" />
+            <span className="text-xs font-bold text-[#20262D] dark:text-[#F8FAFC] uppercase tracking-wider">
               {t('commandCenter')}
             </span>
           </div>
-          <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#754A2B] dark:bg-[#C68A5A] text-white dark:text-[#0F1115] uppercase">
+          <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#734627] dark:bg-[#C98957] text-white dark:text-[#111315] uppercase">
             {role}
           </span>
         </div>
@@ -63,15 +63,15 @@ export function AdminSidebar() {
                 href={item.href}
                 className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold transition-all duration-150 ${
                   isActive
-                    ? 'bg-[#F5E9D9] dark:bg-[rgba(198,138,90,0.16)] text-[#754A2B] dark:text-[#F2D1A7] border-l-4 border-l-[#D97706] dark:border-l-[#F59E0B] shadow-xs'
-                    : 'text-[#6E6258] dark:text-[#CBD5E1] hover:bg-[#F8F2E9] dark:hover:bg-[#202734] hover:text-[#25201C] dark:hover:text-[#FFFFFF]'
+                    ? 'bg-[#F1E4D8] dark:bg-[rgba(244,185,66,0.12)] text-[#734627] dark:text-[#F8FAFC] border-l-4 border-l-[#D98A18] dark:border-l-[#F4B942] shadow-xs'
+                    : 'text-[#5F6974] dark:text-[#D8DEE5] hover:bg-[#F6F4EF] dark:hover:bg-[#242B33] hover:text-[#20262D] dark:hover:text-[#FFFFFF]'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <Icon className={`h-4 w-4 ${isActive ? 'text-[#D97706] dark:text-[#F59E0B]' : 'text-[#6E6258] dark:text-[#94A3B8]'}`} />
+                  <Icon className={`h-4 w-4 ${isActive ? 'text-[#D98A18] dark:text-[#F4B942]' : 'text-[#7C858D] dark:text-[#919EAB]'}`} />
                   <span>{item.label}</span>
                 </div>
-                {isActive && <ChevronRight className="h-3 w-3 text-[#D97706] dark:text-[#F59E0B]" />}
+                {isActive && <ChevronRight className="h-3 w-3 text-[#D98A18] dark:text-[#F4B942]" />}
               </Link>
             );
           })}
@@ -79,16 +79,16 @@ export function AdminSidebar() {
       </div>
 
       {/* Footer Info Box */}
-      <div className="p-4 border-t border-[#E5DED3] dark:border-[#303949] text-[11px] text-[#6E6258] dark:text-[#CBD5E1] font-medium space-y-1">
+      <div className="p-4 border-t border-[#DED8CD] dark:border-[#303943] text-[11px] text-[#5F6974] dark:text-[#B9C3CD] font-medium space-y-1">
         <p className="flex justify-between">
           <span>{t('systemStatusLabel')}:</span>
-          <span className="text-risk-low font-bold">ONLINE</span>
+          <span className="text-[#4F7A58] font-bold">ONLINE</span>
         </p>
         <p className="flex justify-between">
           <span>{t('activeWeatherStations')}:</span>
-          <span className="text-[#25201C] dark:text-[#F8FAFC] font-bold">7 / 8</span>
+          <span className="text-[#20262D] dark:text-[#F8FAFC] font-bold">7 / 8</span>
         </p>
-        <p className="text-[10px] text-[#918579] dark:text-[#94A3B8] mt-2">RAHAT Decision Support System</p>
+        <p className="text-[10px] text-[#7C858D] dark:text-[#919EAB] mt-2">RAHAT Decision Support System</p>
       </div>
     </aside>
   );

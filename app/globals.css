@@ -9,56 +9,58 @@
 }
 
 /* ====================================================
-   LIGHT THEME — WHITE / OFF-WHITE + EARTH-BROWN + SAFFRON
+   LIGHT THEME — TERRAIN PAPER PALETTE
    ==================================================== */
 html.light, :root:not(.dark) {
-  --app-bg: #F8F7F4;
-  --app-bg-canvas: #FCFBF9;
-  --app-bg-subtle: #F3EFE8;
-  --app-surface-subtle: #EEE7DC;
+  --app-bg: #F6F4EF;
+  --app-bg-canvas: #FBFAF7;
+  --app-bg-subtle: #EEE9E0;
+  --app-surface-subtle: #F3EFE7;
   --app-surface: #FFFFFF;
-  --app-surface-muted: #FBF8F3;
+  --app-surface-muted: #FBF8F2;
   --app-surface-raised: #FFFFFF;
   --app-header-bg: #FFFFFF;
-  --app-sidebar-bg: #FFFDF9;
-  --app-footer-bg: #2B2520;
+  --app-sidebar-bg: #FBFAF7;
+  --app-footer-bg: #2C2926;
   --app-input-bg: #FFFFFF;
+  --app-menu-bg: #FFFFFF;
   --app-table-bg: #FFFFFF;
-  --app-table-header-bg: #F4EFE8;
-  --app-table-row-hover: #FFF7EA;
+  --app-table-header-bg: #F3EFE7;
+  --app-table-row-hover: #FFF7E8;
   --app-modal-bg: #FFFFFF;
-  --app-overlay-bg: rgba(38, 31, 24, 0.38);
+  --app-overlay-bg: rgba(32, 38, 45, 0.38);
   --app-toast-bg: #FFFFFF;
 
-  --app-border: #E5DED3;
-  --app-border-strong: #D5C7B7;
-  --app-border-divider: #ECE8E1;
+  --app-border: #DED8CD;
+  --app-border-strong: #CEC5B8;
+  --app-border-divider: #E8E3DA;
 
-  --app-text: #25201C;
-  --app-text-heading: #33271F;
-  --app-text-secondary: #6E6258;
-  --app-text-muted: #918579;
-  --app-link: #754A2B;
-  --app-link-hover: #A45D20;
+  --app-text: #3E4751;
+  --app-text-heading: #20262D;
+  --app-text-secondary: #5F6974;
+  --app-text-muted: #7C858D;
+  --app-text-disabled: #A0A7AD;
+  --app-link: #734627;
+  --app-link-hover: #5D351C;
 
   /* Brand Brown */
-  --brand-brown: #754A2B;
-  --brand-brown-hover: #5D3820;
-  --brand-brown-active: #472817;
-  --brand-brown-soft: #F3E6D8;
-  --brand-brown-border: #DABFA8;
-  --brand-brown-text: #754A2B;
+  --brand-brown: #734627;
+  --brand-brown-hover: #5D351C;
+  --brand-brown-active: #482813;
+  --brand-brown-soft: #F1E4D8;
+  --brand-brown-border: #D6BDAA;
+  --brand-brown-text: #734627;
 
   /* Saffron Accent */
-  --brand-saffron: #D97706;
-  --brand-saffron-hover: #B45309;
-  --brand-saffron-active: #92400E;
-  --brand-saffron-soft: #FFF4DE;
-  --brand-saffron-border: #F3C46F;
-  --brand-saffron-text: #995900;
-  --focus-ring: #D97706;
+  --brand-saffron: #D98A18;
+  --brand-saffron-hover: #B96E0B;
+  --brand-saffron-active: #965706;
+  --brand-saffron-soft: #FFF1D6;
+  --brand-saffron-border: #F0C77E;
+  --brand-saffron-text: #955908;
+  --focus-ring: #D98A18;
 
-  /* Legacy aliases for component backwards-compatibility */
+  /* Legacy Aliases */
   --bg-main: var(--app-bg);
   --bg-card: var(--app-surface);
   --bg-header: var(--app-header-bg);
@@ -86,56 +88,58 @@ html.light, :root:not(.dark) {
 }
 
 /* ====================================================
-   DARK THEME — CHARCOAL / SLATE PROFESSIONAL DARK MODE
+   DARK THEME — MONSOON NIGHT PALETTE
    ==================================================== */
 html.dark {
-  --app-bg: #0F1115;
-  --app-bg-canvas: #141820;
-  --app-bg-subtle: #181D26;
-  --app-surface-subtle: #1C2330;
-  --app-surface: #1B212B;
-  --app-surface-muted: #202734;
-  --app-surface-raised: #252E3C;
-  --app-header-bg: #151A22;
-  --app-sidebar-bg: #151A22;
-  --app-footer-bg: #0B0E13;
-  --app-input-bg: #1B212B;
-  --app-table-bg: #1B212B;
-  --app-table-header-bg: #252E3C;
-  --app-table-row-hover: #263141;
-  --app-modal-bg: #202734;
+  --app-bg: #111315;
+  --app-bg-canvas: #15191D;
+  --app-bg-subtle: #181D22;
+  --app-surface-subtle: #1A2026;
+  --app-surface: #1C2228;
+  --app-surface-muted: #202730;
+  --app-surface-raised: #252D36;
+  --app-header-bg: #15191D;
+  --app-sidebar-bg: #15191D;
+  --app-footer-bg: #0C0F12;
+  --app-input-bg: #1C2228;
+  --app-menu-bg: #252D36;
+  --app-table-bg: #1C2228;
+  --app-table-header-bg: #252D36;
+  --app-table-row-hover: #27313B;
+  --app-modal-bg: #252D36;
   --app-overlay-bg: rgba(0, 0, 0, 0.62);
-  --app-toast-bg: #252E3C;
+  --app-toast-bg: #252D36;
 
-  --app-border: #323C4B;
-  --app-border-strong: #435064;
-  --app-border-divider: #2B3647;
+  --app-border: #38424C;
+  --app-border-strong: #46515D;
+  --app-border-divider: #2D3741;
 
-  --app-text: #F8FAFC;
-  --app-text-heading: #FFFFFF;
-  --app-text-secondary: #CBD5E1;
-  --app-text-muted: #94A3B8;
-  --app-link: #E2B27D;
-  --app-link-hover: #F5C98D;
+  --app-text: #D8DEE5;
+  --app-text-heading: #F8FAFC;
+  --app-text-secondary: #B9C3CD;
+  --app-text-muted: #919EAB;
+  --app-text-disabled: #66727E;
+  --app-link: #F4B942;
+  --app-link-hover: #FFC95C;
 
-  /* Brand Brown in Dark Mode */
-  --brand-brown: #C68A5A;
-  --brand-brown-hover: #D8A779;
-  --brand-brown-active: #A76A3D;
-  --brand-brown-soft: rgba(198, 138, 90, 0.15);
-  --brand-brown-border: rgba(198, 138, 90, 0.38);
-  --brand-brown-text: #F2D1A7;
+  /* Warm Brown Secondary Accent in Dark Mode */
+  --brand-brown: #C98957;
+  --brand-brown-hover: #DCA273;
+  --brand-brown-active: #A96F42;
+  --brand-brown-soft: rgba(201, 137, 87, 0.14);
+  --brand-brown-border: rgba(201, 137, 87, 0.32);
+  --brand-brown-text: #F3CFB4;
 
   /* Saffron Accent in Dark Mode */
-  --brand-saffron: #F59E0B;
-  --brand-saffron-hover: #FBBF24;
-  --brand-saffron-active: #D97706;
-  --brand-saffron-soft: rgba(245, 158, 11, 0.14);
-  --brand-saffron-border: rgba(245, 158, 11, 0.34);
-  --brand-saffron-text: #FCD34D;
-  --focus-ring: #F59E0B;
+  --brand-saffron: #F4B942;
+  --brand-saffron-hover: #FFC95C;
+  --brand-saffron-active: #D9961B;
+  --brand-saffron-soft: rgba(244, 185, 66, 0.14);
+  --brand-saffron-border: rgba(244, 185, 66, 0.34);
+  --brand-saffron-text: #FFD77F;
+  --focus-ring: #F4B942;
 
-  /* Legacy aliases */
+  /* Legacy Aliases */
   --bg-main: var(--app-bg);
   --bg-card: var(--app-surface);
   --bg-header: var(--app-header-bg);
@@ -188,22 +192,31 @@ body {
 }
 
 /* ====================================================
-   LIGHT MODE OVERRIDES FOR HARD-CODED & TAILWIND CLASSES
+   LIGHT MODE OVERRIDES FOR TAILWIND SURFACES
    ==================================================== */
 html.light body {
-  background-color: #F8F7F4 !important;
-  color: #25201C !important;
+  background-color: #F6F4EF !important;
+  color: #3E4751 !important;
 }
 
 html.light header {
   background-color: #FFFFFF !important;
-  border-color: #E5DED3 !important;
+  border-color: #DED8CD !important;
 }
 
 html.light footer {
-  background-color: #2B2520 !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  color: #F7F1E8 !important;
+  background-color: #2C2926 !important;
+  border-color: #3D3834 !important;
+  color: #FAF7F0 !important;
+}
+
+html.light footer a {
+  color: #F4B942 !important;
+}
+
+html.light footer p,
+html.light footer span {
+  color: #D4CCC0;
 }
 
 html.light .bg-white,
@@ -216,41 +229,50 @@ html.light .bg-sand-100,
 html.light .bg-sand-200,
 html.light .bg-earth-100,
 html.light .bg-earth-200 {
-  background-color: #F3EFE8 !important;
+  background-color: #EEE9E0 !important;
 }
 
 html.light .border-sand-300,
 html.light .border-sand-400,
 html.light .border-earth-300,
 html.light .border-earth-400 {
-  border-color: #E5DED3 !important;
+  border-color: #DED8CD !important;
 }
 
 html.light input,
 html.light select,
 html.light textarea {
   background-color: #FFFFFF !important;
-  color: #25201C !important;
-  border-color: #D9D0C4 !important;
+  color: #20262D !important;
+  border-color: #D8D1C6 !important;
 }
 
 /* ====================================================
    DARK MODE OVERRIDES FOR CHARCOAL / SLATE SURFACES
    ==================================================== */
 html.dark body {
-  background-color: #0F1115 !important;
-  color: #F8FAFC !important;
+  background-color: #111315 !important;
+  color: #D8DEE5 !important;
 }
 
 html.dark header {
-  background-color: #151A22 !important;
-  border-color: #303949 !important;
+  background-color: #15191D !important;
+  border-color: #303943 !important;
 }
 
 html.dark footer {
-  background-color: #0B0E13 !important;
-  border-color: #2A3341 !important;
-  color: #E5E7EB !important;
+  background-color: #0C0F12 !important;
+  border-color: #27313B !important;
+  color: #E7ECF1 !important;
+}
+
+html.dark footer a {
+  color: #F4B942 !important;
+}
+
+html.dark footer p,
+html.dark footer span {
+  color: #9AA6B2;
 }
 
 /* Map white/gray/sand backgrounds in dark mode to dark surfaces */
@@ -271,14 +293,14 @@ html.dark .bg-slate-800,
 html.dark .bg-slate-850,
 html.dark .bg-slate-900,
 html.dark .bg-slate-950 {
-  background-color: #1B212B !important;
-  border-color: #323C4B !important;
+  background-color: #1C2228 !important;
+  border-color: #38424C !important;
   color: #F8FAFC !important;
 }
 
 html.dark aside {
-  background-color: #151A22 !important;
-  border-color: #303949 !important;
+  background-color: #15191D !important;
+  border-color: #303943 !important;
 }
 
 html.dark .text-earth-900,
@@ -296,13 +318,13 @@ html.dark .text-gray-700,
 html.dark .text-gray-600,
 html.dark .text-slate-700,
 html.dark .text-slate-600 {
-  color: #CBD5E1 !important;
+  color: #D8DEE5 !important;
 }
 
 html.dark .text-earth-500,
 html.dark .text-gray-500,
 html.dark .text-slate-500 {
-  color: #94A3B8 !important;
+  color: #919EAB !important;
 }
 
 html.dark .border-earth-300,
@@ -313,15 +335,15 @@ html.dark .border-gray-700,
 html.dark .border-gray-800,
 html.dark .border-slate-700,
 html.dark .border-slate-800 {
-  border-color: #323C4B !important;
+  border-color: #38424C !important;
 }
 
 html.dark input,
 html.dark select,
 html.dark textarea {
-  background-color: #1B212B !important;
+  background-color: #1C2228 !important;
   color: #F8FAFC !important;
-  border-color: #3A4657 !important;
+  border-color: #3B4651 !important;
 }
 
 /* Custom Scrollbar */
@@ -335,12 +357,12 @@ html.dark textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E5DED3;
+  background: #DED8CD;
   border-radius: 3px;
 }
 
 html.dark ::-webkit-scrollbar-thumb {
-  background: #323C4B;
+  background: #38424C;
 }
 
 /* Leaflet Map Overrides */
@@ -349,21 +371,21 @@ html.dark ::-webkit-scrollbar-thumb {
 }
 
 html.dark .leaflet-container {
-  background-color: #0F1115 !important;
+  background-color: #111315 !important;
 }
 
 html.light .leaflet-container {
-  background-color: #F3EFE8 !important;
+  background-color: #EEE9E0 !important;
 }
 
 html.dark .leaflet-popup-content-wrapper {
-  background-color: #1B212B !important;
+  background-color: #1C2228 !important;
   color: #F8FAFC !important;
-  border: 1px solid #323C4B !important;
+  border: 1px solid #38424C !important;
 }
 
 html.light .leaflet-popup-content-wrapper {
   background-color: #FFFFFF !important;
-  color: #25201C !important;
-  border: 1px solid #E5DED3 !important;
+  color: #20262D !important;
+  border: 1px solid #DED8CD !important;
 }

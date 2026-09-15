@@ -7,8 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { RiskBadge } from '@/components/ui/StatusBadge';
 import { LoadingState } from '@/components/ui/LoadingState';
-import { EmergencyCallModal } from '@/components/ui/EmergencyCallModal';
-import { FileText, Send, CheckCircle2, MapPin, AlertOctagon, PhoneCall, Info } from 'lucide-react';
+import { FileText, Send, CheckCircle2, MapPin } from 'lucide-react';
 import { formatTimeAgo } from '@/lib/utils/format';
 import { RiskLevel } from '@/types';
 import { useLanguage } from '@/lib/providers/LanguageProvider';
@@ -18,7 +17,6 @@ export default function ReportsPage() {
   const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const [isEmergencyModalOpen, setIsEmergencyModalOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     reporter_name: '',
@@ -78,53 +76,23 @@ export default function ReportsPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       {/* Header */}
-      <div className="border-b border-earth-300 dark:border-gray-800 pb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="space-y-1">
+      <div className="border-b border-earth-300 dark:border-gray-800 pb-6 flex items-center justify-between">
+        <div>
           <div className="flex items-center gap-3">
-            <div className="p-2.5 bg-earth-200 dark:bg-gray-800 rounded-xl border border-earth-300 dark:border-gray-700 text-brand-primary dark:text-saffron-primary shadow-xs">
+            <div className="p-2 bg-earth-200 dark:bg-gray-800 rounded-xl border border-earth-300 dark:border-gray-700 text-brand-primary dark:text-saffron-primary">
               <FileText className="h-6 w-6" />
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-earth-900 dark:text-white tracking-tight">
                 {t('fieldReportsTitle')}
               </h1>
-              <p className="text-xs sm:text-sm text-earth-600 dark:text-gray-400 mt-0.5 font-medium">
+              <p className="text-sm text-earth-600 dark:text-gray-400 mt-1">
                 {t('fieldReportsSub')}
               </p>
             </div>
           </div>
-        </div>
-
-        <Button
-          onClick={() => setIsEmergencyModalOpen(true)}
-          variant="outline"
-          className="border-red-300 text-red-700 hover:bg-red-50 dark:border-red-800 dark:text-red-400 dark:hover:bg-red-950/40 text-xs font-bold gap-2 shrink-0"
-        >
-          <PhoneCall className="w-4 h-4 text-red-600 dark:text-red-400" />
-          <span>{t('emergencyCall')}</span>
-        </Button>
-      </div>
-
-      {/* Purpose & Safety Notice Strip */}
-      <div className="p-4 bg-earth-soft dark:bg-gray-800/90 border border-earth-300 dark:border-gray-700 rounded-2xl space-y-2 text-xs text-earth-900 dark:text-gray-200">
-        <div className="flex items-start gap-2.5">
-          <Info className="w-4 h-4 text-brand-primary dark:text-saffron-primary shrink-0 mt-0.5" />
-          <p className="font-semibold leading-relaxed">{t('fieldReportGuide')}</p>
-        </div>
-        <div className="flex items-center justify-between gap-4 pt-2 border-t border-earth-300/40 dark:border-gray-700/60 text-[11px] text-earth-600 dark:text-gray-400">
-          <span className="flex items-center gap-1.5">
-            <AlertOctagon className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
-            {t('notEmergencyDispatch')}
-          </span>
-          <button
-            type="button"
-            onClick={() => setIsEmergencyModalOpen(true)}
-            className="text-red-600 dark:text-red-400 font-bold underline hover:text-red-700 shrink-0"
-          >
-            {t('immediateDangerCall')}
-          </button>
         </div>
       </div>
 
@@ -150,11 +118,10 @@ export default function ReportsPage() {
 
               <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                 <div>
-                  <label className="block text-earth-900 dark:text-gray-200 font-semibold mb-1">
-                    Reporter Name <span className="text-earth-500 font-normal">(Optional)</span>
-                  </label>
+                  <label className="block text-earth-900 dark:text-gray-200 font-semibold mb-1">Reporter Name</label>
                   <input
                     type="text"
+                    required
                     placeholder="e.g. Tashi Norbu or Anonymous"
                     value={formData.reporter_name}
                     onChange={(e) => setFormData({ ...formData, reporter_name: e.target.value })}
@@ -294,9 +261,6 @@ export default function ReportsPage() {
           </div>
         </div>
       </div>
-
-      {/* Emergency Call Modal */}
-      <EmergencyCallModal isOpen={isEmergencyModalOpen} onClose={() => setIsEmergencyModalOpen(false)} />
     </div>
   );
 }

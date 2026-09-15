@@ -229,6 +229,61 @@ export const translations = {
     meghalayaSdma: 'Meghalaya SDMA Helpline (1070)',
     sikkimSdma: 'Sikkim SDMA Helpline (1077)',
     assamSdma: 'Assam SDMA Helpline (1079)',
+
+    // Judge-Ready Action Guidance ("What to do now")
+    whatToDoNow: 'What to do now',
+    guidanceDisclaimer: 'Guidance is decision support. Follow authorized local agency instructions.',
+    lowGuidance1: 'Review local weather conditions.',
+    lowGuidance2: 'Stay aware of updates during prolonged rainfall.',
+    modGuidance1: 'Monitor slope runoff and local advisories.',
+    modGuidance2: 'Avoid unnecessary travel near unstable cut slopes during heavy rain.',
+    highGuidance1: 'Limit travel through known landslide-prone corridors.',
+    highGuidance2: 'Prepare essential documents, phone charge, and local contacts.',
+    sevGuidance1: 'Follow directions from authorized local agencies.',
+    sevGuidance2: 'Move away from visibly unstable slopes if local authorities advise evacuation.',
+    sevGuidance3: 'Use emergency services if there is immediate danger.',
+
+    // Trust & Data Status
+    assessmentStatus: 'Assessment Status',
+    dataFreshness: 'Data Freshness',
+    liveObservation: 'Live Weather Ingestion Active',
+    simulationBadge: 'Simulation data — not live field observation',
+
+    // Explainable "Why this risk?"
+    whyThisRisk: 'Why this risk?',
+    whyThisRiskSub: 'Contributing factor breakdown for this station assessment',
+    accumulatedRainfall: '24h Accumulated Rainfall',
+    shortTermForecast: '6h Rainfall Forecast',
+    soilSaturationLevel: 'Soil Saturation Level',
+    slopeAngleFactor: 'Slope Angle & Terrain',
+    geologyFactor: 'Geology & Rock Seepage',
+    dataConfidenceFactor: 'Model Confidence & Data Quality',
+    riskDisclaimerNote: 'This is decision support, not a guaranteed prediction.',
+    factorElevated: 'Elevated',
+    factorNormal: 'Normal',
+    factorModerate: 'Moderate',
+    factorHigh: 'High',
+    factorSevere: 'Severe',
+    observedProviderData: 'Observed Provider Data',
+    calculatedAssessment: 'Calculated Risk Assessment',
+
+    // Overview / Landing Page
+    landingEyebrow: 'Landslide hazard intelligence',
+    landingHeadline: 'Earlier awareness for safer decisions in landslide-prone communities.',
+    landingSub: 'RAHAT combines weather conditions, terrain context, and field observations to help communities and response teams understand changing landslide hazard conditions.',
+    primaryCta: 'View Hazard Dashboard',
+    secondaryCta: 'Learn Preparedness Steps',
+    card1Title: 'Monitor Conditions',
+    card1Desc: 'Automated ingestion of multi-window rainfall, soil saturation, and local station observations.',
+    card2Title: 'Understand Risk',
+    card2Desc: 'Transparent threshold modeling combining slope susceptibility, antecedent moisture, and geological triggers.',
+    card3Title: 'Act with Confidence',
+    card3Desc: 'Actionable guidance, verified emergency contacts, and citizen-led field reporting for faster community response.',
+
+    // Field Reports Copy Upgrade
+    fieldReportGuide: 'Help improve local awareness by reporting visible signs such as cracks, debris, blocked drainage, falling rocks, or slope movement.',
+    notEmergencyDispatch: 'Field reports are reviewed for regional hazard monitoring and are NOT an emergency dispatch channel.',
+    immediateDangerCall: 'If there is immediate danger to life or property, call emergency helpline immediately.',
   },
   hi: {
     // Brand & Header
@@ -458,5 +513,60 @@ export const translations = {
     meghalayaSdma: 'मेघालय एसडीएमए हेल्पलाइन (1070)',
     sikkimSdma: 'सिक्किम एसडीएमए हेल्पलाइन (1077)',
     assamSdma: 'असम एसडीएमए हेल्पलाइन (1079)',
+
+    // Judge-Ready Action Guidance ("What to do now")
+    whatToDoNow: 'अभी क्या करें',
+    guidanceDisclaimer: 'मार्गदर्शन केवल निर्णय-सहायता के लिए है। अधिकृत स्थानीय एजेंसी के निर्देशों का पालन करें।',
+    lowGuidance1: 'स्थानीय मौसम की स्थिति की समीक्षा करें।',
+    lowGuidance2: 'लंबी अवधि की वर्षा के दौरान अपडेट से अवगत रहें।',
+    modGuidance1: 'ढलान के बहाव और स्थानीय सलाह की निगरानी करें।',
+    modGuidance2: 'भारी बारिश के दौरान अस्थिर कटी हुई ढलानों के पास अनावश्यक यात्रा से बचें।',
+    highGuidance1: 'ज्ञात भूस्खलन-संभावित गलियारों से होकर यात्रा सीमित करें।',
+    highGuidance2: 'आवश्यक दस्तावेज, फोन चार्ज और स्थानीय संपर्क तैयार रखें।',
+    sevGuidance1: 'अधिकृत स्थानीय एजेंसियों के निर्देशों का पालन करें।',
+    sevGuidance2: 'यदि स्थानीय अधिकारी निकासी की सलाह देते हैं तो स्पष्ट रूप से अस्थिर ढलानों से दूर चले जाएं।',
+    sevGuidance3: 'तत्काल खतरा होने पर आपातकालीन सेवाओं का उपयोग करें।',
+
+    // Trust & Data Status
+    assessmentStatus: 'मूल्यांकन स्थिति',
+    dataFreshness: 'डेटा ताज़गी',
+    liveObservation: 'लाइव मौसम डेटा प्रवाह सक्रिय',
+    simulationBadge: 'सिमुलेशन डेटा — वास्तविक क्षेत्रीय अवलोकन नहीं',
+
+    // Explainable "Why this risk?"
+    whyThisRisk: 'यह जोखिम क्यों है?',
+    whyThisRiskSub: 'इस स्टेशन मूल्यांकन के लिए योगदान देने वाले कारकों का विवरण',
+    accumulatedRainfall: '24 घंटे संचयी वर्षा',
+    shortTermForecast: '6 घंटे वर्षा पूर्वानुमान',
+    soilSaturationLevel: 'मिट्टी संतृप्ति स्तर',
+    slopeAngleFactor: 'ढलान कोण और भू-भाग',
+    geologyFactor: 'भूविज्ञान और चट्टान रिसाव',
+    dataConfidenceFactor: 'मॉडल आत्मविश्वास और डेटा गुणवत्ता',
+    riskDisclaimerNote: 'यह केवल निर्णय-सहायता है, निश्चित भविष्यवाणी नहीं।',
+    factorElevated: 'बढ़ा हुआ',
+    factorNormal: 'सामान्य',
+    factorModerate: 'मध्यम',
+    factorHigh: 'उच्च',
+    factorSevere: 'गंभीर',
+    observedProviderData: 'अवलोकित प्रदाता डेटा',
+    calculatedAssessment: 'परिकलित जोखिम मूल्यांकन',
+
+    // Overview / Landing Page
+    landingEyebrow: 'भूस्खलन जोखिम बुद्धिमत्ता',
+    landingHeadline: 'भूस्खलन-प्रवण समुदायों में सुरक्षित निर्णयों के लिए पूर्व जागरूकता।',
+    landingSub: 'राहत मौसम की स्थिति, भू-भाग के संदर्भ और क्षेत्र के अवलोकनों को जोड़ती है ताकि समुदायों और प्रतिक्रिया टीमों को बदलती भूस्खलन जोखिम स्थितियों को समझने में मदद मिल सके।',
+    primaryCta: 'जोखिम डैशबोर्ड देखें',
+    secondaryCta: 'तैयारी के कदम जानें',
+    card1Title: 'स्थितियों की निगरानी',
+    card1Desc: 'बहु-अवधि वर्षा, मिट्टी की संतृप्ति और स्थानीय स्टेशन अवलोकनों का स्वचालित संचयन।',
+    card2Title: 'जोखिम को समझें',
+    card2Desc: 'ढलान संवेदनशीलता, पूर्व नमी और भूवैज्ञानिक ट्रिगर्स को मिलाकर पारदर्शी थ्रेशोल्ड मॉडलिंग।',
+    card3Title: 'विश्वास के साथ कार्य करें',
+    card3Desc: 'तेज़ सामुदायिक प्रतिक्रिया के लिए कार्रवाई योग्य मार्गदर्शन, सत्यापित आपातकालीन संपर्क और फील्ड रिपोर्टिंग।',
+
+    // Field Reports Copy Upgrade
+    fieldReportGuide: 'दरारों, मलबे, अवरुद्ध जल-निकासी, गिरते पत्थरों या ढलान की हलचल जैसे दिखाई देने वाले संकेतों की रिपोर्ट करके स्थानीय जागरूकता बेहतर बनाने में मदद करें।',
+    notEmergencyDispatch: 'फील्ड रिपोर्टों की क्षेत्रीय जोखिम निगरानी के लिए समीक्षा की जाती है और यह आपातकालीन प्रेषण चैनल नहीं है।',
+    immediateDangerCall: 'यदि जीवन या संपत्ति के लिए तत्काल खतरा है, तो तुरंत आपातकालीन हेल्पलाइन पर कॉल करें।',
   },
 };

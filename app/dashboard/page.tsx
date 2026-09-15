@@ -95,7 +95,7 @@ export default function RiskDashboardPage() {
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <OperatingModeBadge mode={demoScenario ? 'simulation_training' : 'live_decision_support'} />
+          <OperatingModeBadge mode={demoScenario ? 'simulation' : 'live_decision_support'} />
           <LiveWeatherBadge />
         </div>
       </div>
